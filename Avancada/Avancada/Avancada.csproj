@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bibliotecas\Content\avancadacss.css" />
     <Content Include="Bibliotecas\Content\bootstrap-grid.css" />
     <Content Include="Bibliotecas\Content\bootstrap-grid.min.css" />
     <Content Include="Bibliotecas\Content\bootstrap-reboot.css" />
@@ -133,10 +134,15 @@
     <Content Include="Bibliotecas\Scripts\umd\popper-utils.min.js" />
     <Content Include="Bibliotecas\Scripts\umd\popper.js" />
     <Content Include="Bibliotecas\Scripts\umd\popper.min.js" />
+    <Content Include="Imgs\1.jpg" />
+    <Content Include="Imgs\2.jpeg" />
+    <Content Include="Imgs\3.jpg" />
+    <Content Include="Imgs\4.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,6 +163,8 @@
     <Content Include="Bibliotecas\Scripts\popper.js.map" />
     <Content Include="Bibliotecas\Scripts\popper-utils.min.js.map" />
     <Content Include="Bibliotecas\Scripts\popper-utils.js.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,9 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Bibliotecas\Scripts\index.d.ts" />
