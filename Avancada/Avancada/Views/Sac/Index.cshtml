@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "SAC";
+}
+<div class="sections">
+    <div id="sac" class="center">
+        <form action="index.html" method="get">
+            <label class="mr-sm-2" for="Tipo">Tipo</label>
+            <select name="sacOpcoes" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="Tipo">
+                <option value="reclamação">Reclamaç&atilde;o</option>
+                <option value="sugestão">Sugest&atilde;o</option>
+                <option value="duvida">D&uacute;vida</option>
+            </select>
+            <br>
+            <br>
+            <label class="mr-sm-2" for="Corpo">Mensagem</label>
+            <textarea rows="8" cols="40" class="form-control" id="Corpo" required>
+            </textarea><br>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+                <br>
+            </div>
+            <br>
+            <input type="submit" class="btn btn-primary mb-2" style="margin-left: auto;margin-right: auto;margin-top:20px;display:block;" value="Enviar">
+        </form>
+    </div>
+    <h1 class="red">asadasd</h1>
+</div>

@@ -91,7 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bibliotecas\Content\avancadacss.css" />
+    <Content Include="Bibliotecas\Content\avancada.css" />
     <Content Include="Bibliotecas\Content\bootstrap-grid.css" />
     <Content Include="Bibliotecas\Content\bootstrap-grid.min.css" />
     <Content Include="Bibliotecas\Content\bootstrap-reboot.css" />
@@ -164,6 +164,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SacController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +198,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Sac\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
