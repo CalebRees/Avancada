@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="~/Bibliotecas/Content/avancada.css" />
+    <link rel="stylesheet" href="~/Bibliotecas/Content/bootstrap.min.css" />
+    <script src="~/Bibliotecas/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Bibliotecas/Scripts/umd/popper.min.js"></script>
+    <script src="~/Bibliotecas/Scripts/bootstrap.min.js"></script>
+    <script src="~/Bibliotecas/Scripts/Avan.js"></script>
+    <title>Avan&ccedil;ada - @ViewBag.Title</title>
+</head>
+<body>
+    <nav class="topnav">
+        <div class="nav-butt" id="but">
+            <img src="~/Bibliotecas/Content/menu-4-32.ico" />
+        </div>
+        <a href="~/Home/Index" class="nav-avan">Avan&ccedil;ada</a>
+    </nav>
+    <div class="nav-hid">
+        <p class="nav-avan" style="margin:30px">Avan&ccedil;ada</p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-light">Login</button>
+            <button type="button" class="btn btn-light">Cadastro</button>
+        </div>
+
+    </div>
+    <div class="nav-hid-bk"></div>
+    <main class="mdl-layout__content">
+        <div class="page-content">@RenderBody()</div>
+    </main>
+</body>
+</html>
