@@ -1,0 +1,120 @@
+.topnav {
+    width: 100%;
+    height: 62px;
+    background: #7f0000;
+    display:flex;
+    flex-flow: row wrap;
+    align-items:center;
+}
+.nav-butt{
+    width:32px;
+    height:32px;
+    margin:15px;
+    cursor:pointer;
+    float:left;
+}
+.nav-hid {
+    position: fixed;
+    border-right:1px solid white; 
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background: #b71c1c;
+    z-index: 3;
+    transform: translateX(-200px);
+    transition: transform .1s linear;
+}
+.nav-hid2 {
+    display: block;
+    transform: translateX(0);
+}
+.nav-hid-bk {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    display: none;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0,0,0,0.5);
+}
+.nav-hid-bk2{
+    display:block;
+}
+#sac{
+    margin: 10px;
+    width:50%;
+}
+.nav-avan{
+    font-size:20px;
+    font-family:'Felix Titling';
+    color:white;
+    margin-left:10px;
+    font-weight:700;
+    font-style: oblique;
+    text-decoration:overline underline;
+}
+
+.nav-link{
+    color:white;
+    font-weight:700;
+}
+.nav-avan:link{
+    font-family:'Felix Titling';
+    color:white;
+    font-weight:700;
+    font-style: oblique;
+    text-decoration:overline underline;
+}
+.nav-avan:visited{
+    font-family:'Felix Titling';
+    color:white;
+    font-weight:700;
+    font-style: oblique;
+    text-decoration:overline underline;
+}
+.nav-avan:hover{
+    font-family:'Felix Titling';
+    color:white;
+    font-weight:700;
+    font-style: oblique;
+    text-decoration:none;
+}
+.nav-avan:active{
+    font-family:'Felix Titling';
+    color:white;
+    font-weight:700;
+    font-style: oblique;
+    text-decoration:none;
+}
+.nav-link:hover{
+    color:rgb(200,200,200);
+}
+.table-cardapio{
+    transform: translate(0,50%);
+    margin:auto;
+}
+.h-card{
+    margin: 30px;
+}
+.center{
+    text-align:center;
+}
+.coluna {
+    float: left;
+    padding: 0;
+}
+.Inici {
+    border: 1px solid black;
+    outline: thick ridge rgb(100,100,100);
+}
+.sections {
+    max-width: 923px;
+    margin: 0 auto;
+}
+.boldn{
+    font-weight:900;
+}
