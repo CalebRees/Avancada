@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Avancada.Controllers
 {
-    public class SacController : Controller
+    public class UserController : Controller
     {
-        // GET: Sac
-        public ActionResult Index()
+        // GET: User
+        public ActionResult LoginCadastro()
         {
             return View();
         }

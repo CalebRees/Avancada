@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "LoginCadastro";
+}
+
+<div class="container text-center" style="margin-top:300px">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Cadastro</h2>
+            <form action="~/Home/Index" method="post">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Nome</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Sobrenome</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Email</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Senha</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Confirmar Senha</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group form-check text-left">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+        <div class="col-sm align-middle" style="border-left:solid 2px black">
+            <form action="~/Home/Index" method="post" style="margin-top:50px">
+                <h2 class="text-center">Login</h2>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Login</span>
+                    </div>
+                    <input type="text" class="form-control" required>
+
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Senha</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group form-check text-left">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+

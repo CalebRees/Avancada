@@ -91,13 +91,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bibliotecas\Content\avancada.css" />
+    <Content Include="Bibliotecas\Content\avancad.css" />
     <Content Include="Bibliotecas\Content\bootstrap-grid.css" />
     <Content Include="Bibliotecas\Content\bootstrap-grid.min.css" />
     <Content Include="Bibliotecas\Content\bootstrap-reboot.css" />
     <Content Include="Bibliotecas\Content\bootstrap-reboot.min.css" />
     <Content Include="Bibliotecas\Content\bootstrap.css" />
     <Content Include="Bibliotecas\Content\bootstrap.min.css" />
+    <Content Include="Bibliotecas\Content\menu-4-32.ico" />
+    <Content Include="Bibliotecas\Scripts\Avan.js" />
     <Content Include="Global.asax" />
     <Content Include="Bibliotecas\Scripts\bootstrap.bundle.js" />
     <Content Include="Bibliotecas\Scripts\bootstrap.bundle.min.js" />
@@ -164,7 +166,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SacController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,7 +200,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Sac\Index.cshtml" />
+    <Content Include="Views\Home\Sac.cshtml" />
+    <Content Include="Views\Home\CardapioConsultar.cshtml" />
+    <Content Include="Views\User\LoginCadastro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

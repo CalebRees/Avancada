@@ -13,5 +13,13 @@ namespace Avancada.Controllers
         {
             return View();
         }
+        public ActionResult Sac()
+        {
+            return View();
+        }
+        public ActionResult CardapioConsultar()
+        {
+            return View();
+        }
     }
 }
