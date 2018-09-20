@@ -140,6 +140,7 @@
     <Content Include="Imgs\2.jpeg" />
     <Content Include="Imgs\3.jpg" />
     <Content Include="Imgs\4.jpg" />
+    <Content Include="Imgs\user.jpg" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -203,6 +204,7 @@
     <Content Include="Views\Home\Sac.cshtml" />
     <Content Include="Views\Home\CardapioConsultar.cshtml" />
     <Content Include="Views\User\LoginCadastro.cshtml" />
+    <Content Include="Views\User\Perfil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
