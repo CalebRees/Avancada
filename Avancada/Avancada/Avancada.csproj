@@ -205,6 +205,8 @@
     <Content Include="Views\Home\CardapioConsultar.cshtml" />
     <Content Include="Views\User\LoginCadastro.cshtml" />
     <Content Include="Views\User\Perfil.cshtml" />
+    <Content Include="Views\User\ContaSaldo.cshtml" />
+    <Content Include="Views\User\Recarga.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

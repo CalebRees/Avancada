@@ -17,5 +17,13 @@ namespace Avancada.Controllers
         {
             return View();
         }
+
+        public ActionResult Recarga() {
+            return View();
+        }
+
+        public ActionResult ContaSaldo() {
+            return View();
+        }
     }
 }
