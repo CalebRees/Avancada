@@ -46,7 +46,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -141,6 +155,17 @@
     <Content Include="Imgs\3.jpg" />
     <Content Include="Imgs\4.jpg" />
     <Content Include="Imgs\user.jpg" />
+    <Content Include="Models\AvanBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AvanBD.Context.cs</LastGenOutput>
+      <DependentUpon>AvanBD.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\AvanBD.edmx.sql" />
+    <Content Include="Models\AvanBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AvanBD.cs</LastGenOutput>
+      <DependentUpon>AvanBD.edmx</DependentUpon>
+    </Content>
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -149,6 +174,13 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <EntityDeploy Include="Models\AvanBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AvanBD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AvanBD.edmx.diagram">
+      <DependentUpon>AvanBD.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -170,6 +202,42 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AvanBD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvanBD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AvanBD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AvanBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvanBD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cardapio.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Funcionario.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gerente.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Nutricionista.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Refeicao.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transacao.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -216,7 +284,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Bibliotecas\Scripts\index.d.ts" />
@@ -224,6 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

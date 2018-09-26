@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="60be3d2402c64de9ae8e712ff53fe3a7" Name="Diagram1" >
+        <EntityTypeShape EntityType="AvanBD.Nutricionista" Width="1.5" PointX="5.25" PointY="1.5" />
+        <EntityTypeShape EntityType="AvanBD.Cardapio" Width="1.5" PointX="7.625" PointY="1.75" />
+        <EntityTypeShape EntityType="AvanBD.Refeicao" Width="1.5" PointX="9.875" PointY="1.625" />
+        <EntityTypeShape EntityType="AvanBD.Cliente" Width="1.5" PointX="9.875" PointY="4.25" />
+        <EntityTypeShape EntityType="AvanBD.Transacao" Width="1.5" PointX="7.5" PointY="4.25" />
+        <AssociationConnector Association="AvanBD.NutricionistaCardapio" />
+        <AssociationConnector Association="AvanBD.RefeicaoCardapio" />
+        <AssociationConnector Association="AvanBD.ClienteTransacao" />
+        <EntityTypeShape EntityType="AvanBD.Gerente" Width="1.5" PointX="12" PointY="2.875" />
+        <EntityTypeShape EntityType="AvanBD.Funcionario" Width="1.5" PointX="5.25" PointY="4.25" />
+        <AssociationConnector Association="AvanBD.FuncionarioTransacao" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
