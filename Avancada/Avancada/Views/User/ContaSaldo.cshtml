@@ -1,22 +1,34 @@
 ﻿
+@using WebMatrix.Data;
 @{
     ViewBag.Title = "ContaSaldo";
+    var db = Database.Open("AvanBD");
+    var selectQueryString = "SELECT * FROM Transacao ORDER BY data";
+   // var selectQueryString2 = "SELECT * FROM Cliente ORDER BY id";
 }
 <div>
     <div>
-        <h2>Saldo</h2>
-        <div>Valor(R$)</div>
-        <div>Mil Doll</div>
+        <h2 style="text-align:center">Saldo</h2>
+        <div>@row.Saldo</div>
     </div>
     <div>
-        <h2>Histórico da Conta</h2>
+        <h2 style="text-align:center">Histórico da Conta</h2>
         <table class="table table-cardapio table-striped table-bordered" style="width:90%;border:solid 2px black">
 
             <tr style="background-color:#7f0000;color:white">
                 <th>Data</th>
                 <th>Valor(R$)</th>
-                <th>Tipo de Transação</th>
+
             </tr>
+            @foreach (var row in db.Query(selectQueryString))
+            {
+                <tr>
+                    <td>@row.Data</td>
+                    <td>@row.Valor</td>
+
+
+                </tr>
+            }
         </table>
     </div>
 </div>
