@@ -1,9 +1,21 @@
+@font-face{
+    font-family:Castellar;
+    src:url(Castellar.ttf);
+}
+body,html{
+    width:100%;
+    height:100%;
+}
 .user-icon{
     width:30px;
     height:30px;
     border-radius:50%;
 }
 .topnav {
+    position:fixed;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
     width: 100%;
     height: 62px;
     background: #7f0000;
@@ -51,7 +63,7 @@
     width:50%;
 }
 .nav-avan{
-    font-family:'Felix Titling';
+    font-family:'Castellar';
     color:white;
     font-weight:700;
     font-style: oblique;
@@ -61,34 +73,10 @@
     color:white;
     font-weight:700;
 }
-.navbar-brand:link{
-    font-family:'Felix Titling';
-    color:white;
-    font-weight:700;
-    font-style: oblique;
+.nav-avan:hover{
     text-decoration:overline underline;
 }
-.navbar-brand:visited{
-    font-family:'Felix Titling';
-    color:white;
-    font-weight:700;
-    font-style: oblique;
-    text-decoration:overline underline;
-}
-.navbar-brand:hover{
-    font-family:'Felix Titling';
-    color:white;
-    font-weight:700;
-    font-style: oblique;
-    text-decoration:overline underline;
-}
-.navbar-brand:active{
-    font-family:'Felix Titling';
-    color:white;
-    font-weight:700;
-    font-style: oblique;
-    text-decoration:overline underline;
-}
+
 .nav-link:hover{
     color:rgb(200,200,200);
 }
