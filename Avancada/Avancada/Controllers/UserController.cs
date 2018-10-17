@@ -8,13 +8,12 @@ namespace Avancada.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
-        public ActionResult LoginCadastro()
+        public ActionResult Perfil()
         {
             return View();
         }
-        public ActionResult Perfil()
-        {
+
+        public ActionResult AlterarPerfil() {
             return View();
         }
 

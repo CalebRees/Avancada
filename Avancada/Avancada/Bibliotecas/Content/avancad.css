@@ -12,14 +12,16 @@ body,html{
     border-radius:50%;
 }
 .topnav {
-    position:fixed;
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     width: 100%;
     height: 62px;
     background: #7f0000;
     overflow: auto;
+    top: 0;
+    z-index: 10000;
 }
 .nav-butt{
     width:32px;

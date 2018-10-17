@@ -298,7 +298,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ComumController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -321,28 +321,38 @@
     <Compile Include="Models\Cardapio.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CardapioMetadado.cs" />
     <Compile Include="Models\Cliente.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClienteMetadado.cs" />
     <Compile Include="Models\Funcionario.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FuncionarioMetadado.cs" />
     <Compile Include="Models\Gerente.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GerenteMetadado.cs" />
     <Compile Include="Models\Nutricionista.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\NutricionistaMetadado.cs" />
     <Compile Include="Models\Refeicao.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RefeicaoMetadado.cs" />
     <Compile Include="Models\Transacao.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TransacaoMetadado.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\CaixaController.cs" />
+    <Compile Include="Controllers\GerenteController.cs" />
+    <Compile Include="Controllers\NutricionistaController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -360,7 +370,7 @@
     <Content Include="Bibliotecas\Scripts\popper-utils.min.js.map" />
     <Content Include="Bibliotecas\Scripts\popper-utils.js.map" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Comum\Index.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -372,12 +382,23 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Home\Sac.cshtml" />
-    <Content Include="Views\Home\CardapioConsultar.cshtml" />
-    <Content Include="Views\User\LoginCadastro.cshtml" />
+    <Content Include="Views\Comum\Sac.cshtml" />
+    <Content Include="Views\Comum\CardapioConsultar.cshtml" />
+    <Content Include="Views\Comum\LoginCadastro.cshtml" />
     <Content Include="Views\User\Perfil.cshtml" />
     <Content Include="Views\User\ContaSaldo.cshtml" />
     <Content Include="Views\User\Recarga.cshtml" />
+    <Content Include="Views\Caixa\ConsultaSaldo.cshtml" />
+    <Content Include="Views\Caixa\RecargaSaldo.cshtml" />
+    <Content Include="Views\Gerente\ConsultaFuncionario.cshtml" />
+    <Content Include="Views\Gerente\CadastroFuncionario.cshtml" />
+    <Content Include="Views\Gerente\DetalhesFuncionario.cshtml" />
+    <Content Include="Views\Gerente\AprovaCardapio.cshtml" />
+    <Content Include="Views\Gerente\Relatorio.cshtml" />
+    <Content Include="Views\Gerente\Preco.cshtml" />
+    <Content Include="Views\Gerente\Promocao.cshtml" />
+    <Content Include="Views\Nutricionista\CriarCardapio.cshtml" />
+    <Content Include="Views\User\AlterarPerfil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -411,7 +432,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51203</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
