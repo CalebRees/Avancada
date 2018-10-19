@@ -10,3 +10,9 @@
 
     });
 });
+
+$(document).ready(function () {
+    $(".login input").focus(function(){
+        $(".trans-lab").toggleClass("trans-lab2");
+    });
+});
