@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Avancada.Controllers
 {
-    public class HomeController : Controller
+    public class ComumController : Controller
     {
         // GET: Home
         public ActionResult Index()
@@ -21,5 +21,10 @@ namespace Avancada.Controllers
         {
             return View();
         }
+        public ActionResult LoginCadastro()
+        {
+            return View();
+        }
+
     }
 }
