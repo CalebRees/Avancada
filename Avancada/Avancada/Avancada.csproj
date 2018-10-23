@@ -116,7 +116,7 @@
     <Content Include="Bibliotecas\Content\bootstrap.css" />
     <Content Include="Bibliotecas\Content\bootstrap.min.css" />
     <Content Include="Bibliotecas\Content\menu-4-32.ico" />
-    <Content Include="Bibliotecas\Scripts\Avan.js" />
+    <Content Include="Bibliotecas\Scripts\Avanc.js" />
     <Content Include="bin\Avancada.dll" />
     <Content Include="bin\Avancada.pdb" />
     <Content Include="bin\EntityFramework.dll" />
@@ -399,6 +399,7 @@
     <Content Include="Views\Gerente\Promocao.cshtml" />
     <Content Include="Views\Nutricionista\CriarCardapio.cshtml" />
     <Content Include="Views\User\AlterarPerfil.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

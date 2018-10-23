@@ -11,8 +11,6 @@
     });
 });
 
-$(document).ready(function () {
-    $(".login input").focus(function(){
-        $(".trans-lab").toggleClass("trans-lab2");
-    });
-});
+function form(){
+    document.getElementById("log").innerHTML = "sdasdasd";
+}
