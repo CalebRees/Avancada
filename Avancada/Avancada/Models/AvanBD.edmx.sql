@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/25/2018 23:51:39
--- Generated from EDMX file: C:\Users\reesc\source\repos\Avancada\Avancada\Avancada\Models\AvanBD.edmx
+-- Date Created: 10/24/2018 13:23:40
+-- Generated from EDMX file: C:\Users\RenatoNR\Source\Repos\CalebRees\Avancada\Avancada\Avancada\Models\AvanBD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,44 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_NutricionistaCardapio]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cardapio] DROP CONSTRAINT [FK_NutricionistaCardapio];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RefeicaoCardapio]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cardapio] DROP CONSTRAINT [FK_RefeicaoCardapio];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClienteTransacao]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transacao] DROP CONSTRAINT [FK_ClienteTransacao];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FuncionarioTransacao]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transacao] DROP CONSTRAINT [FK_FuncionarioTransacao];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Nutricionista]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Nutricionista];
+GO
+IF OBJECT_ID(N'[dbo].[Cardapio]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Cardapio];
+GO
+IF OBJECT_ID(N'[dbo].[Refeicao]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Refeicao];
+GO
+IF OBJECT_ID(N'[dbo].[Cliente]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Cliente];
+GO
+IF OBJECT_ID(N'[dbo].[Transacao]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Transacao];
+GO
+IF OBJECT_ID(N'[dbo].[GerenteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[GerenteSet];
+GO
+IF OBJECT_ID(N'[dbo].[FuncionarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FuncionarioSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
