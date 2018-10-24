@@ -23,6 +23,7 @@ namespace Avancada.Controllers
         }
         public ActionResult LoginCadastro()
         {
+
             return View();
         }
 

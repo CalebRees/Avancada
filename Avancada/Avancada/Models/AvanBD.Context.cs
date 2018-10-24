@@ -24,7 +24,12 @@ namespace Avancada.Models
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+        internal object Cliente()
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Nutricionista> Nutricionista { get; set; }
         public DbSet<Cardapio> Cardapio { get; set; }
         public DbSet<Refeicao> Refeicao { get; set; }
