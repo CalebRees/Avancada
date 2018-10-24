@@ -3,15 +3,24 @@
     ViewBag.Title = "LoginCadastro";
 }
 
-<div class="login">
+<form class="login">
     <div class="login-title">Avan&ccedil;ada</div>
     <div class="login-desc">
         <h4>Login</h4>
         <h5>Fa&ccedil;a login com seu email</h5>
     </div>
     <div class="login-input">
-        <label for="login" class="log">Login</label>
-        <input type="text" id="login" onclick="form()" />
-        <div id="log"></div>
+        <label for="login" class="log-lab">Login</label>
+        <input type="text" id="login" onclick="func('login')" onblur="func('login')" />
+        <div class="trans-lab"></div>
     </div>
-</div>
+    <div class="login-input">
+        <label for="senha" class="log-lab">Senha</label>
+        <input type="text" id="senha" onclick="func('senha')" onblur="func('senha')" />
+        <div class="trans-lab"></div>
+    </div>
+    <div class="log-buts">
+        <a href="#" class="cad-but">Criar Conta</a>
+        <input type="submit" value="Entrar" class="log-but" />
+    </div>
+</form>

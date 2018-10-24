@@ -11,6 +11,10 @@
     });
 });
 
-function form(){
-    document.getElementById("log").innerHTML = "sdasdasd";
+function func(a) {
+    a = "#" + a;
+    $(a).next().toggleClass("trans-lab2");
+    if ($(a).val()==="") {
+        $(a).prev().toggleClass("lab-foc");
+    }
 }
