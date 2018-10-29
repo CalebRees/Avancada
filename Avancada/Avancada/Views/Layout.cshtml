@@ -13,27 +13,66 @@
     <title>Avan&ccedil;ada - @ViewBag.Title</title>
 </head>
 <body>
-    <div class="back-nav"></div>
-    <nav class="topnav">
+    <nav class="navbar  navbar-light" style="background-color: #b71c1c;">
         <div class="nav-butt" id="but">
             <img src="~/Bibliotecas/Content/menu-4-32.ico" />
         </div>
         <div class="nav-avan">
-            Avan&Ccedil;ada
+            @Html.ActionLink("Avançada", "Index", "Comum")
+        </div>
+
+        <div class="row" align="center">
+            <a class="nav-link" href="@Url.Action("CardapioConsultar", "Comum" )"> Cardápio </a>
+            <a class="nav-link" href="@Url.Action("ContaSaldo", "User" )"> Saldo </a>
+            <a class="nav-link" href="@Url.Action("Recarga", "User" )"> Recarga </a>
+            <a class="nav-link" href="@Url.Action("LoginCadastro", "Comum" )"> Login </a>
+            <a class="nav-link" href="@Url.Action("Sac", "Comum" )"> SAC </a>
+            <a class="nav-link" href="@Url.Action("Index", "Cliente" )"> Cadastro </a>
+
         </div>
 
     </nav>
+
+
+    <!--
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b71c1c;">
+            <a class="navbar-brand" href="#">Navbar</a>
+
+            <div class="nav-avan">
+                @Html.ActionLink("Avançada", "Index", "Comum")
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="@Url.Action("CardapioConsultar", "Comum" )"> Cardápio </a>
+                    <a class="nav-link" href="@Url.Action("ContaSaldo", "User" )"> Saldo </a>
+                    <a class="nav-link" href="@Url.Action("Recarga", "User" )"> Recarga </a>
+                    <a class="nav-link" href="@Url.Action("LoginCadastro", "Comum" )"> Login </a>
+                    <a class="nav-link" href="@Url.Action("Sac", "Comum" )"> SAC </a>
+                    <a class="nav-link" href="@Url.Action("Index", "Cliente" )"> Cadastro </a>
+                    <a class="nav-item nav-link" href="#">Pricing</a>
+                    <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                </div>
+            </div>
+        </nav>
+
+    -->
+
+
 
     <div class="nav-hid">
         <img src="~/Imgs/user.jpg" class="user-icon" />
         <br>
         <div>
-            @Html.ActionLink("Avançada", "Index", "Comum")
-            @Html.ActionLink("Cardápio", "CardapioConsultar", "Comum")
-            @Html.ActionLink("Saldo", "ContaSaldo", "User")
-            @Html.ActionLink("Recarga!", "Recarga", "User")
-            @Html.ActionLink("Login", "LoginCadastro", "Comum")
-            @Html.ActionLink("SAC", "Sac", "Comum")
+            <a class="nav-link" href="@Url.Action("CardapioConsultar", "Comum" )"> Cardápio </a>
+            <a class="nav-link" href="@Url.Action("ContaSaldo", "User" )"> Saldo </a>
+            <a class="nav-link" href="@Url.Action("Recarga", "User" )"> Recarga </a>
+            <a class="nav-link" href="@Url.Action("LoginCadastro", "Comum" )"> Login </a>
+            <a class="nav-link" href="@Url.Action("Sac", "Comum" )"> SAC </a>
+            <a class="nav-link" href="@Url.Action("Index", "Cliente" )"> Cadastro </a>
         </div>
     </div>
     <div class="nav-hid-bk"></div>
