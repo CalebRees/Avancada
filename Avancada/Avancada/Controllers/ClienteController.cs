@@ -13,7 +13,8 @@ namespace Avancada.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var clientes = db.Cliente.ToList();
+            return View(clientes);
         }
     }
 }
