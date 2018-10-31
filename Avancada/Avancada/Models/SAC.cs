@@ -12,20 +12,13 @@ namespace Avancada.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Nutricionista
+    public partial class SAC
     {
-        public Nutricionista()
-        {
-            this.Cardapio = new HashSet<Cardapio>();
-        }
-    
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
-        public string CPF { get; set; }
-        public decimal Salario { get; set; }
-    
-        public virtual ICollection<Cardapio> Cardapio { get; set; }
+        public string mensagem { get; set; }
+        public string data { get; set; }
+        public string tipo { get; set; }
+        public string tipoclientr { get; set; }
+        public string Property1 { get; set; }
     }
 }

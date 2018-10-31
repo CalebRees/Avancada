@@ -25,12 +25,10 @@ namespace Avancada.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Nutricionista> Nutricionista { get; set; }
-        public DbSet<Cardapio> Cardapio { get; set; }
         public DbSet<Refeicao> Refeicao { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Transacao> Transacao { get; set; }
-        public DbSet<Gerente> GerenteSet { get; set; }
-        public DbSet<Funcionario> FuncionarioSet { get; set; }
+        public DbSet<Usuario> UsuarioSet { get; set; }
+        public DbSet<SAC> SACSet { get; set; }
     }
 }

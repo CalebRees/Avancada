@@ -19,9 +19,9 @@ namespace Avancada.Models
         public decimal Valor { get; set; }
         public int Forma { get; set; }
         public int ClienteId { get; set; }
-        public int FuncionarioId { get; set; }
+        public int UsuarioId { get; set; }
     
         public virtual Cliente Cliente { get; set; }
-        public virtual Funcionario Funcionario { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

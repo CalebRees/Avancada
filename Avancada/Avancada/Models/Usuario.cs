@@ -12,11 +12,12 @@ namespace Avancada.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Funcionario
+    public partial class Usuario
     {
-        public Funcionario()
+        public Usuario()
         {
             this.Transacao = new HashSet<Transacao>();
+            this.Refeicao = new HashSet<Refeicao>();
         }
     
         public int Id { get; set; }
@@ -24,8 +25,10 @@ namespace Avancada.Models
         public string Email { get; set; }
         public string Senha { get; set; }
         public string CPF { get; set; }
-        public decimal Salario { get; set; }
+        public string Tipo { get; set; }
     
         public virtual ICollection<Transacao> Transacao { get; set; }
+        public virtual ICollection<Refeicao> Refeicao { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }

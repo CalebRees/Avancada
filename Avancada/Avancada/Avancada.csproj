@@ -326,34 +326,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AvanBD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cardapio.cs">
-      <DependentUpon>AvanBD.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\CardapioMetadado.cs" />
     <Compile Include="Models\Cliente.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ClienteMetadado.cs" />
-    <Compile Include="Models\Funcionario.cs">
-      <DependentUpon>AvanBD.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\FuncionarioMetadado.cs" />
-    <Compile Include="Models\Gerente.cs">
-      <DependentUpon>AvanBD.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\GerenteMetadado.cs" />
-    <Compile Include="Models\Nutricionista.cs">
-      <DependentUpon>AvanBD.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\NutricionistaMetadado.cs" />
     <Compile Include="Models\Refeicao.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RefeicaoMetadado.cs" />
+    <Compile Include="Models\SAC.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Transacao.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TransacaoMetadado.cs" />
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>AvanBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />

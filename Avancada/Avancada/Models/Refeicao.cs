@@ -14,18 +14,15 @@ namespace Avancada.Models
     
     public partial class Refeicao
     {
-        public Refeicao()
-        {
-            this.Cardapio = new HashSet<Cardapio>();
-        }
-    
         public int Id { get; set; }
         public string Principal { get; set; }
         public string Salada { get; set; }
         public string Bebida { get; set; }
         public string Sobremesa { get; set; }
         public string Vegetariana { get; set; }
+        public int UsuarioId { get; set; }
+        public string Data { get; set; }
     
-        public virtual ICollection<Cardapio> Cardapio { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

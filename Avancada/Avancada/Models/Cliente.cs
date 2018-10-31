@@ -20,13 +20,10 @@ namespace Avancada.Models
         }
     
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
-        public string CPF { get; set; }
         public decimal Saldo { get; set; }
-        public int Inteiro { get; set; }
+        public int Tipo { get; set; }
     
         public virtual ICollection<Transacao> Transacao { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }
