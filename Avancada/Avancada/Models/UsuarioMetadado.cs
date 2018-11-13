@@ -6,11 +6,10 @@ using System.Web;
 
 namespace Avancada.Models
 {
-    [MetadataType(typeof(GerenteMetadado))]
-    public partial class Gerente { }
-    public class GerenteMetadado
+    [MetadataType(typeof(UsuarioMetadado))]
+    public partial class Usuario { }
+    public class UsuarioMetadado
     {
-
         [Required(ErrorMessage = "")]
         [StringLength(30, ErrorMessage = "")]
         public string Nome { get; set; }
@@ -28,6 +27,7 @@ namespace Avancada.Models
         public string CPF { get; set; }
 
         [Required(ErrorMessage = "")]
-        public decimal Salario { get; set; }
+        [StringLength(30, ErrorMessage = "")]
+        public string Tipo { get; set; }
     }
 }

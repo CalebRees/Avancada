@@ -13,21 +13,11 @@ namespace Avancada.Models
 
         [Required(ErrorMessage = "")]
         [StringLength(30, ErrorMessage = "")]
-        public string Nome { get; set; }
+        public string Saldo { get; set; }
 
         [Required(ErrorMessage = "")]
         [StringLength(30, ErrorMessage = "")]
-        public string Email { get; set; }
+        public string Tipo { get; set; }
 
-        [Required(ErrorMessage = "")]
-        [StringLength(30, ErrorMessage = "")]
-        public string Senha { get; set; }
-
-        [Required(ErrorMessage = "")]
-        [StringLength(30, ErrorMessage = "")]
-        public string CPF { get; set; }
-
-        [Required(ErrorMessage = "")]
-        public int Inteiro { get; set; }
     }
 }

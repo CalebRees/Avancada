@@ -16,5 +16,20 @@ namespace Avancada.Models
 
         [Required(ErrorMessage = "")]
         public int Forma { get; set; }
+
+        [Required(ErrorMessage = "")]
+        public int ClienteId { get; set; }
+
+        [Required(ErrorMessage = "")]
+        public int UsuarioId { get; set; }
+        
+        [Required(ErrorMessage = "")]
+        [StringLength(30, ErrorMessage = "")]
+
+        [Required(ErrorMessage = "")]
+        [StringLength(30, ErrorMessage = "")]
+        public string Email { get; set; }
+        public string Email { get; set; }
+
     }
 }

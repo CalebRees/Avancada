@@ -29,6 +29,15 @@ namespace Avancada.Models
         [Required(ErrorMessage = "")]
         [StringLength(30, ErrorMessage = "")]
         public string Vegetariana { get; set; }
-      
+
+        [Required(ErrorMessage = "")]
+        [StringLength(30, ErrorMessage = "")]
+        public string UsuarioId { get; set; }
+
+        [Required(ErrorMessage = "")]
+        [StringLength(30, ErrorMessage = "")]
+        public string Data { get; set; }
+
+
     }
 }

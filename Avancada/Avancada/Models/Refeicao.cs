@@ -21,7 +21,7 @@ namespace Avancada.Models
         public string Sobremesa { get; set; }
         public string Vegetariana { get; set; }
         public int UsuarioId { get; set; }
-        public string Data { get; set; }
+        public System.DateTime Data { get; set; }
     
         public virtual Usuario Usuario { get; set; }
     }

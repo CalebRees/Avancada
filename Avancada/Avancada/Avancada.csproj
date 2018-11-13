@@ -326,14 +326,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AvanBD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CardapioMetadado.cs" />
     <Compile Include="Models\Cliente.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ClienteMetadado.cs" />
-    <Compile Include="Models\FuncionarioMetadado.cs" />
-    <Compile Include="Models\GerenteMetadado.cs" />
-    <Compile Include="Models\NutricionistaMetadado.cs" />
+    <Compile Include="Models\UsuarioMetadado.cs" />
     <Compile Include="Models\Refeicao.cs">
       <DependentUpon>AvanBD.tt</DependentUpon>
     </Compile>
