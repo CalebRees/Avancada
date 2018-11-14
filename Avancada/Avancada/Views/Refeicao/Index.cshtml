@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Avancada.Models.Refeicao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Principal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bebida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sobremesa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vegetariana)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Principal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bebida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sobremesa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vegetariana)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Alterar", new { id=item.IdRefeicao }) |
+            @Html.ActionLink("Deletar", "Excluir", new { id=item.IdRefeicao })
+        </td>
+    </tr>
+}
+
+</table>

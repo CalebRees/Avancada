@@ -16,11 +16,13 @@
     </div>
     <div class="login-input">
         <label for="senha" class="log-lab">Senha</label>
-        <input type="text" id="senha" onclick="func('senha')" onblur="func('senha')" />
+        <input type="password" id="senha" onclick="func('senha')" onblur="func('senha')" />
         <div class="trans-lab"></div>
     </div>
     <div class="log-buts">
         <a href="#" class="cad-but">Criar Conta</a>
-        <input type="submit" value="Entrar" class="log-but" />
+        <button type="button" class="log-but" id="botao-entrar">Entrar</button>
     </div>
+    <div id="status"></div>
 </form>
+<script src="@Url.Content("~/Scripts/Autenticacao.js")"></script>

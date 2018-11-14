@@ -4,16 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="60be3d2402c64de9ae8e712ff53fe3a7" Name="Diagram1" >
-        <EntityTypeShape EntityType="AvanBD.Refeicao" Width="1.5" PointX="10.625" PointY="1.25" />
-        <EntityTypeShape EntityType="AvanBD.Cliente" Width="1.5" PointX="7.375" PointY="4.5" />
-        <EntityTypeShape EntityType="AvanBD.Transacao" Width="1.5" PointX="4.875" PointY="3.875" />
-        <AssociationConnector Association="AvanBD.ClienteTransacao" />
-        <EntityTypeShape EntityType="AvanBD.Usuario" Width="1.5" PointX="7.25" PointY="1.25" />
+      <Diagram DiagramId="b3859369ea7440a0aa512b14e191af36" Name="Diagram1" >
+        <EntityTypeShape EntityType="AvanBD.SAC" Width="1.5" PointX="11.125" PointY="2.125" />
+        <EntityTypeShape EntityType="AvanBD.Usuario" Width="1.5" PointX="13.625" PointY="2.875" />
+        <EntityTypeShape EntityType="AvanBD.Cliente" Width="1.5" PointX="16.375" PointY="5.5" />
+        <EntityTypeShape EntityType="AvanBD.Refeicao" Width="1.5" PointX="11.125" PointY="4.875" />
+        <EntityTypeShape EntityType="AvanBD.Transacao" Width="1.5" PointX="16.5" PointY="0.75" />
+        <AssociationConnector Association="AvanBD.SACUsuario" />
         <AssociationConnector Association="AvanBD.UsuarioTransacao" />
-        <AssociationConnector Association="AvanBD.UsuarioRefeicao" />
         <AssociationConnector Association="AvanBD.UsuarioCliente" />
-        <EntityTypeShape EntityType="AvanBD.SAC" Width="1.5" PointX="11.25" PointY="5" />
+        <AssociationConnector Association="AvanBD.RefeicaoUsuario" />
+        <AssociationConnector Association="AvanBD.ClienteTransacao" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

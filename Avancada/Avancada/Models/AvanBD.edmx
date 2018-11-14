@@ -4,59 +4,147 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AvanBD.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AvanBD.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="AvanBDStoreContainer">
-    <EntitySet Name="Refeicao" EntityType="AvanBD.Store.Refeicao" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SAC" EntityType="AvanBD.Store.SAC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="AvanBD.Store.Usuario" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Cliente" EntityType="AvanBD.Store.Cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Refeicao" EntityType="AvanBD.Store.Refeicao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Transacao" EntityType="AvanBD.Store.Transacao" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="SACUsuario" Association="AvanBD.Store.SACUsuario">
+      <End Role="SAC" EntitySet="SAC" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioTransacao" Association="AvanBD.Store.UsuarioTransacao">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Transacao" EntitySet="Transacao" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioCliente" Association="AvanBD.Store.UsuarioCliente">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="RefeicaoUsuario" Association="AvanBD.Store.RefeicaoUsuario">
+      <End Role="Refeicao" EntitySet="Refeicao" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
     <AssociationSet Name="ClienteTransacao" Association="AvanBD.Store.ClienteTransacao">
       <End Role="Cliente" EntitySet="Cliente" />
       <End Role="Transacao" EntitySet="Transacao" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Refeicao">
+  <EntityType Name="SAC">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdSAC" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Principal" Type="nvarchar" Nullable="false" MaxLength="45" />
-    <Property Name="Salada" Type="nvarchar" Nullable="false" MaxLength="45" />
-    <Property Name="Bebida" Type="nvarchar" Nullable="false" MaxLength="45" />
-    <Property Name="Sobremesa" Type="nvarchar" Nullable="false" MaxLength="45" />
-    <Property Name="Vegetariana" Type="nvarchar" Nullable="false" MaxLength="45" />
+    <Property Name="IdSAC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mensagem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioIdUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Cliente">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdCliente" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="90" />
-    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="35" />
-    <Property Name="Senha" Type="nvarchar" Nullable="false" MaxLength="16" />
-    <Property Name="CPF" Type="nvarchar" Nullable="false" MaxLength="11" />
-    <Property Name="Saldo" Type="decimal" Nullable="false" Precision="5" Scale="2" />
-    <Property Name="Inteiro" Type="int" Nullable="false" />
+    <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Saldo" Type="decimal" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Usuario_IdUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Refeicao">
+    <Key>
+      <PropertyRef Name="IdRefeicao" />
+    </Key>
+    <Property Name="IdRefeicao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Principal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salada" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bebida" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sobremesa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Vegetariana" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Dia" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioIdUsuario" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Transacao">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdTransacao" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTransacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Data" Type="datetime" Nullable="false" />
-    <Property Name="Valor" Type="decimal" Nullable="false" Precision="3" Scale="2" />
-    <Property Name="Forma" Type="int" Nullable="false" />
-    <Property Name="ClienteId" Type="int" Nullable="false" />
-    <Property Name="FuncionarioId" Type="int" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Nullable="false" />
+    <Property Name="Forma" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioIdUsuario" Type="int" Nullable="false" />
+    <Property Name="ClienteIdCliente" Type="int" Nullable="false" />
   </EntityType>
+  <Association Name="SACUsuario">
+    <End Role="SAC" Type="AvanBD.Store.SAC" Multiplicity="*" />
+    <End Role="Usuario" Type="AvanBD.Store.Usuario" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="SAC">
+        <PropertyRef Name="UsuarioIdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioTransacao">
+    <End Role="Usuario" Type="AvanBD.Store.Usuario" Multiplicity="1" />
+    <End Role="Transacao" Type="AvanBD.Store.Transacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Transacao">
+        <PropertyRef Name="UsuarioIdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioCliente">
+    <End Role="Usuario" Type="AvanBD.Store.Usuario" Multiplicity="1" />
+    <End Role="Cliente" Type="AvanBD.Store.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="Usuario_IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefeicaoUsuario">
+    <End Role="Refeicao" Type="AvanBD.Store.Refeicao" Multiplicity="*" />
+    <End Role="Usuario" Type="AvanBD.Store.Usuario" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Refeicao">
+        <PropertyRef Name="UsuarioIdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="ClienteTransacao">
     <End Role="Cliente" Type="AvanBD.Store.Cliente" Multiplicity="1" />
     <End Role="Transacao" Type="AvanBD.Store.Transacao" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cliente">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdCliente" />
       </Principal>
       <Dependent Role="Transacao">
-        <PropertyRef Name="ClienteId" />
+        <PropertyRef Name="ClienteIdCliente" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -64,169 +152,224 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AvanBD" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="AvanBDContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Refeicao" EntityType="AvanBD.Refeicao" />
+        <EntityContainer Name="AvanBDContainer2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SAC" EntityType="AvanBD.SAC" />
+          <EntitySet Name="Usuario" EntityType="AvanBD.Usuario" />
           <EntitySet Name="Cliente" EntityType="AvanBD.Cliente" />
+          <EntitySet Name="Refeicao" EntityType="AvanBD.Refeicao" />
           <EntitySet Name="Transacao" EntityType="AvanBD.Transacao" />
+          <AssociationSet Name="SACUsuario" Association="AvanBD.SACUsuario">
+            <End Role="SAC" EntitySet="SAC" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioTransacao" Association="AvanBD.UsuarioTransacao">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Transacao" EntitySet="Transacao" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioCliente" Association="AvanBD.UsuarioCliente">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="RefeicaoUsuario" Association="AvanBD.RefeicaoUsuario">
+            <End Role="Refeicao" EntitySet="Refeicao" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
           <AssociationSet Name="ClienteTransacao" Association="AvanBD.ClienteTransacao">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Transacao" EntitySet="Transacao" />
           </AssociationSet>
-          <EntitySet Name="UsuarioSet" EntityType="AvanBD.Usuario" />
-          <AssociationSet Name="UsuarioTransacao" Association="AvanBD.UsuarioTransacao">
-            <End Role="Usuario" EntitySet="UsuarioSet" />
-            <End Role="Transacao" EntitySet="Transacao" />
-          </AssociationSet>
-          <AssociationSet Name="UsuarioRefeicao" Association="AvanBD.UsuarioRefeicao">
-            <End Role="Usuario" EntitySet="UsuarioSet" />
-            <End Role="Refeicao" EntitySet="Refeicao" />
-          </AssociationSet>
-          <AssociationSet Name="UsuarioCliente" Association="AvanBD.UsuarioCliente">
-            <End Role="Usuario" EntitySet="UsuarioSet" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <EntitySet Name="SACSet" EntityType="AvanBD.SAC" />
         </EntityContainer>
-        <EntityType Name="Refeicao">
+        <EntityType Name="SAC">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdSAC" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Principal" Type="String" Nullable="false" MaxLength="45" />
-          <Property Name="Salada" Type="String" Nullable="false" MaxLength="45" />
-          <Property Name="Bebida" Type="String" Nullable="false" MaxLength="45" />
-          <Property Name="Sobremesa" Type="String" Nullable="false" MaxLength="45" />
-          <Property Name="Vegetariana" Type="String" Nullable="false" MaxLength="45" />
-          <NavigationProperty Name="Usuario" Relationship="AvanBD.UsuarioRefeicao" FromRole="Refeicao" ToRole="Usuario" />
-          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
-          <Property Name="Data" Type="String" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Cliente">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
-          <Property Name="Tipo" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Transacao" Relationship="AvanBD.ClienteTransacao" FromRole="Cliente" ToRole="Transacao" />
-          <NavigationProperty Name="Usuario" Relationship="AvanBD.UsuarioCliente" FromRole="Cliente" ToRole="Usuario" />
-        </EntityType>
-        <EntityType Name="Transacao">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSAC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mensagem" Type="String" Nullable="false" />
           <Property Name="Data" Type="DateTime" Nullable="false" />
-          <Property Name="Valor" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
-          <Property Name="Forma" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="AvanBD.ClienteTransacao" FromRole="Transacao" ToRole="Cliente" />
-          <Property Name="ClienteId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="AvanBD.UsuarioTransacao" FromRole="Transacao" ToRole="Usuario" />
-          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="AvanBD.SACUsuario" FromRole="SAC" ToRole="Usuario" />
+          <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="ClienteTransacao">
-          <End Type="AvanBD.Cliente" Role="Cliente" Multiplicity="1" />
-          <End Type="AvanBD.Transacao" Role="Transacao" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cliente">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Transacao">
-              <PropertyRef Name="ClienteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Usuario">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" />
           <Property Name="Email" Type="String" Nullable="false" />
           <Property Name="Senha" Type="String" Nullable="false" />
           <Property Name="CPF" Type="String" Nullable="false" />
-          <Property Name="Tipo" Type="String" Nullable="false" />
+          <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SAC" Relationship="AvanBD.SACUsuario" FromRole="Usuario" ToRole="SAC" />
           <NavigationProperty Name="Transacao" Relationship="AvanBD.UsuarioTransacao" FromRole="Usuario" ToRole="Transacao" />
-          <NavigationProperty Name="Refeicao" Relationship="AvanBD.UsuarioRefeicao" FromRole="Usuario" ToRole="Refeicao" />
           <NavigationProperty Name="Cliente" Relationship="AvanBD.UsuarioCliente" FromRole="Usuario" ToRole="Cliente" />
+          <NavigationProperty Name="Refeicao" Relationship="AvanBD.RefeicaoUsuario" FromRole="Usuario" ToRole="Refeicao" />
         </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Saldo" Type="Decimal" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="AvanBD.UsuarioCliente" FromRole="Cliente" ToRole="Usuario" />
+          <NavigationProperty Name="Transacao" Relationship="AvanBD.ClienteTransacao" FromRole="Cliente" ToRole="Transacao" />
+        </EntityType>
+        <EntityType Name="Refeicao">
+          <Key>
+            <PropertyRef Name="IdRefeicao" />
+          </Key>
+          <Property Name="IdRefeicao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Principal" Type="String" Nullable="false" />
+          <Property Name="Salada" Type="String" Nullable="false" />
+          <Property Name="Bebida" Type="String" Nullable="false" />
+          <Property Name="Sobremesa" Type="String" Nullable="false" />
+          <Property Name="Vegetariana" Type="String" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" />
+          <Property Name="Dia" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="AvanBD.RefeicaoUsuario" FromRole="Refeicao" ToRole="Usuario" />
+          <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transacao">
+          <Key>
+            <PropertyRef Name="IdTransacao" />
+          </Key>
+          <Property Name="IdTransacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Nullable="false" />
+          <Property Name="Forma" Type="String" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="AvanBD.UsuarioTransacao" FromRole="Transacao" ToRole="Usuario" />
+          <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="AvanBD.ClienteTransacao" FromRole="Transacao" ToRole="Cliente" />
+          <Property Name="ClienteIdCliente" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="SACUsuario">
+          <End Type="AvanBD.SAC" Role="SAC" Multiplicity="*" />
+          <End Type="AvanBD.Usuario" Role="Usuario" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="SAC">
+              <PropertyRef Name="UsuarioIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="UsuarioTransacao">
           <End Type="AvanBD.Usuario" Role="Usuario" Multiplicity="1" />
           <End Type="AvanBD.Transacao" Role="Transacao" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="IdUsuario" />
             </Principal>
             <Dependent Role="Transacao">
-              <PropertyRef Name="UsuarioId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="UsuarioRefeicao">
-          <End Type="AvanBD.Usuario" Role="Usuario" Multiplicity="1" />
-          <End Type="AvanBD.Refeicao" Role="Refeicao" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Refeicao">
-              <PropertyRef Name="UsuarioId" />
+              <PropertyRef Name="UsuarioIdUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="UsuarioCliente">
           <End Type="AvanBD.Usuario" Role="Usuario" Multiplicity="1" />
-          <End Type="AvanBD.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="AvanBD.Cliente" Role="Cliente" Multiplicity="0..1" />
         </Association>
-        <EntityType Name="SAC">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="mensagem" Type="String" Nullable="false" />
-          <Property Name="data" Type="String" Nullable="false" />
-          <Property Name="tipo" Type="String" Nullable="false" />
-          <Property Name="tipoclientr" Type="String" Nullable="false" />
-          <Property Name="Property1" Type="String" Nullable="false" />
-        </EntityType>
+        <Association Name="RefeicaoUsuario">
+          <End Type="AvanBD.Refeicao" Role="Refeicao" Multiplicity="*" />
+          <End Type="AvanBD.Usuario" Role="Usuario" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Refeicao">
+              <PropertyRef Name="UsuarioIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClienteTransacao">
+          <End Type="AvanBD.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="AvanBD.Transacao" Role="Transacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="Transacao">
+              <PropertyRef Name="ClienteIdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AvanBDStoreContainer" CdmEntityContainer="AvanBDContainer">
-    <EntitySetMapping Name="Refeicao">
-      <EntityTypeMapping TypeName="IsTypeOf(AvanBD.Refeicao)">
-        <MappingFragment StoreEntitySet="Refeicao">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Principal" ColumnName="Principal" />
-          <ScalarProperty Name="Salada" ColumnName="Salada" />
-          <ScalarProperty Name="Bebida" ColumnName="Bebida" />
-          <ScalarProperty Name="Sobremesa" ColumnName="Sobremesa" />
-          <ScalarProperty Name="Vegetariana" ColumnName="Vegetariana" />
+  <EntityContainerMapping StorageEntityContainer="AvanBDStoreContainer" CdmEntityContainer="AvanBDContainer2">
+    <EntitySetMapping Name="SAC">
+      <EntityTypeMapping TypeName="IsTypeOf(AvanBD.SAC)">
+        <MappingFragment StoreEntitySet="SAC">
+          <ScalarProperty Name="IdSAC" ColumnName="IdSAC" />
+          <ScalarProperty Name="Mensagem" ColumnName="Mensagem" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(AvanBD.Usuario)">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cliente">
       <EntityTypeMapping TypeName="IsTypeOf(AvanBD.Cliente)">
         <MappingFragment StoreEntitySet="Cliente">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
           <ScalarProperty Name="Saldo" ColumnName="Saldo" />
-          <ScalarProperty Name="Tipo" ColumnName="Inteiro" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refeicao">
+      <EntityTypeMapping TypeName="IsTypeOf(AvanBD.Refeicao)">
+        <MappingFragment StoreEntitySet="Refeicao">
+          <ScalarProperty Name="IdRefeicao" ColumnName="IdRefeicao" />
+          <ScalarProperty Name="Principal" ColumnName="Principal" />
+          <ScalarProperty Name="Salada" ColumnName="Salada" />
+          <ScalarProperty Name="Bebida" ColumnName="Bebida" />
+          <ScalarProperty Name="Sobremesa" ColumnName="Sobremesa" />
+          <ScalarProperty Name="Vegetariana" ColumnName="Vegetariana" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dia" ColumnName="Dia" />
+          <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Transacao">
       <EntityTypeMapping TypeName="IsTypeOf(AvanBD.Transacao)">
         <MappingFragment StoreEntitySet="Transacao">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdTransacao" ColumnName="IdTransacao" />
           <ScalarProperty Name="Data" ColumnName="Data" />
           <ScalarProperty Name="Valor" ColumnName="Valor" />
           <ScalarProperty Name="Forma" ColumnName="Forma" />
-          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
+          <ScalarProperty Name="ClienteIdCliente" ColumnName="ClienteIdCliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="UsuarioCliente" TypeName="AvanBD.UsuarioCliente" StoreEntitySet="Cliente">
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="IdUsuario" ColumnName="Usuario_IdUsuario" />
+      </EndProperty>
+      <EndProperty Name="Cliente">
+        <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -242,7 +385,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

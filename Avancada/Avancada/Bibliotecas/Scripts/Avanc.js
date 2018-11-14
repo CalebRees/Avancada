@@ -9,12 +9,29 @@
         $(".nav-hid").removeClass("nav-hid2");
 
     });
+    $("input").focus(function () {
+        $(this).next().toggleClass("trans-lab2");
+        if ($(this).val() === "") {
+            $(this).prev().toggleClass("lab-foc");
+        }
+    });
+    $("input").blur(function () {
+        $(this).next().toggleClass("trans-lab2");
+        if ($(this).val() === "") {
+            $(this).prev().toggleClass("lab-foc");
+        }
+    });
+    $("#botao-sair").click(function () {
+        $.ajax({
+            url: "/Autenticacao/DesautenticarUsuario",
+            dataType: "json",
+            type: "POST",
+            async: true,
+            success: function (dados) {
+                if (dados.OK)
+                    window.location.href = "/Comum/Index";
+            }
+        });
+    });
 });
 
-function func(a) {
-    a = "#" + a;
-    $(a).next().toggleClass("trans-lab2");
-    if ($(a).val()==="") {
-        $(a).prev().toggleClass("lab-foc");
-    }
-}

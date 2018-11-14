@@ -1,0 +1,88 @@
+﻿@model Avancada.Models.Refeicao
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Você deseja deletar?</h3>
+<div>
+    <h4>Refeicao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Principal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Principal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bebida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bebida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sobremesa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sobremesa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vegetariana)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vegetariana)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

@@ -8,56 +8,56 @@ using System.Web.Mvc;
 
 namespace Avancada.Controllers
 {
-    public class ClienteController : BaseController
+    public class UsuarioController : BaseController
     {
         private AvanBDContainer db = new AvanBDContainer();
         public ActionResult Index()
         {
-            return View(db.Cliente.ToList());
+            return View(db.Usuario.ToList());
         }
         public ActionResult Inserir()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Inserir(Cliente cliente)
+        public ActionResult Inserir(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                db.Cliente.Add(cliente);
+                db.Usuario.Add(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cliente);
+            return View(usuario);
         }
         public ActionResult Alterar(int id)
         {
-            Cliente cliente = db.Cliente.Find(id);
-            return View(cliente);
+            Usuario usuario = db.Usuario.Find(id);
+            return View(usuario);
         }
         [HttpPost]
-        public ActionResult Alterar(Cliente cliente)
+        public ActionResult Alterar(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cliente).State = EntityState.Modified;
+                db.Entry(usuario).State=EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cliente);
+            return View(usuario);
         }
         public ActionResult Excluir(int id)
         {
-            Cliente cliente = db.Cliente.Find(id);
-            return View(cliente);
+            Usuario usuario = db.Usuario.Find(id);
+            return View(usuario);
         }
         [HttpPost, ActionName("Excluir")]
         public ActionResult EfetuarExclusao(int id)
         {
             try
             {
-                Cliente cliente = db.Cliente.Find(id);
-                db.Cliente.Remove(cliente);
+                Usuario usuario = db.Usuario.Find(id);
+                db.Usuario.Remove(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
