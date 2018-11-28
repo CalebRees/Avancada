@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="~/Bibliotecas/Content/avancad.css" />
+    <link rel="stylesheet" href="~/Bibliotecas/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="~/Bibliotecas/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Bibliotecas/Scripts/umd/popper.min.js"></script>
+    <script src="~/Bibliotecas/Scripts/bootstrap.min.js"></script>
+    <script src="~/Bibliotecas/Scripts/Avanc.js"></script>
+    <title>Avan&ccedil;ada - @ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar  navbar-light" style="background-color: #b71c1c;">
+        <div class="nav-butt" id="but">
+            <img src="~/Bibliotecas/Content/menu-4-32.ico" />
+        </div>
+        <div class="nav-avan">
+            @Html.ActionLink("Avançada", "Index", "Comum")
+        </div>
+
+        <div class="row" align="center">
+            <a class="nav-link" href="@Url.Action("CardapioConsultar", "Comum" )"> Cardápio </a>
+            <a class="nav-link" href="@Url.Action("ContaSaldo", "User" )"> Saldo </a>
+            <a class="nav-link" href="@Url.Action("Recarga", "User" )"> Recarga </a>
+            <a class="nav-link" href="@Url.Action("LoginCadastro", "Comum" )"> Login </a>
+            <a class="nav-link" href="@Url.Action("Sac", "Comum" )"> SAC </a>
+            <a class="nav-link" href="@Url.Action("Index", "Cliente" )"> Cadastro </a>
+
+        </div>
+
+    </nav>
+    <div class="nav-hid">
+
+    </div>
+    <div class="nav-hid-bk"></div>
+    <main class="mdl-layout__content">
+        <div class="page-content">@RenderBody()</div>
+    </main>
+</body>
+</html>

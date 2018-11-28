@@ -318,6 +318,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AdminHelper.cs" />
+    <Compile Include="Helpers\FuncHelper.cs" />
+    <Compile Include="Helpers\NutriHelper.cs" />
+    <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Models\AvanBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -417,6 +421,10 @@
     <Content Include="Views\Cliente\Excluir.cshtml" />
     <Content Include="Views\Cliente\ErroExcluir.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\LayoutAdmin.cshtml" />
+    <Content Include="Views\LayoutFuncionario.cshtml" />
+    <Content Include="Views\LayoutNutricionista.cshtml" />
+    <Content Include="Views\LayoutUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

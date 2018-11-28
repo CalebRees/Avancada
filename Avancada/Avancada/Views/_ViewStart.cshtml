@@ -1,5 +1,29 @@
 ﻿
 @{
-    Layout = "~/Views/Layout.cshtml";
+    HttpCookie cookieUsuario = HttpContext.Current.Request.Cookies["CookieUsuarioAvan"];
+    if (cookieUsuario == null)
+    {
+        Layout = "~/Views/Layout.cshtml";
+    }
+    else
+    {
+        int tipo = Convert.ToInt32(cookieUsuario.Values["TipoUsuario"]);
+        if (tipo == 1)
+        {
+            Layout = "~/Views/LayoutAdmin.cshtml";
+        }
+        else if (tipo == 2)
+        {
+            Layout = "~/Views/LayoutUsuario.cshtml";
+        }
+        else if (tipo == 3)
+        {
+            Layout = "~/Views/LayoutFuncionario.cshtml";
+        }
+        else if (tipo == 4)
+        {
+            Layout = "~/Views/LayoutNutricionista.cshtml";
+        }
+    }
 }
 
